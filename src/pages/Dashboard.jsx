@@ -6,6 +6,7 @@ import StatusCard from "../components/StatusCard";
 import MembersCard from "../components/MembersCard";
 import Alerts from "../components/Alerts";
 import FileAttachment from "../components/FileAttachment";
+import AIAnalyzer from "../components/AIAnalyzer";
 
 export default function Dashboard() {
   const [tasks, setTasks] = useState({ owned: [], shared: [] });
@@ -48,6 +49,7 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Left Column */}
         <div className="space-y-6">
+          <AIAnalyzer />
           <TaskForm refresh={fetchTasks} />
           <MembersCard />
         </div>

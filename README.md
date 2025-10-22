@@ -1,7 +1,9 @@
  AI Task Agent System
+
 A sophisticated AI-powered project management system that translates high-level project briefs into concrete technical tasks using specialized AI agents.
 
  🚀 Live Demo
+ 
 Frontend: https://task-agent-frontend.vercel.app
 
 Backend: https://task-agent-backend-ynx3.onrender.com

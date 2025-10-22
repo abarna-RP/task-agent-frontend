@@ -10,32 +10,24 @@ export default function Login() {
   const submit = async (e) => {
     e.preventDefault();
     try {
-      const res = await API.post(
-        "/auth/login",
-        { email, password },
-        { headers: { "Content-Type": "application/json" } }
-      );
+      const res = await API.post("/auth/login", { email, password });
 
-      // ✅ Save token + user
+      // ✅ Save token and user
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
-
-      // ✅ Attach token globally
+      
+      // ✅ Update auth globally
       setAuth(res.data.token);
 
-      // ✅ Redirect
+      // ✅ Redirect to dashboard
       nav("/dashboard");
     } catch (err) {
-      console.error("❌ Login Error:", err.response?.data || err.message);
       alert(err.response?.data?.error || "Login failed");
     }
   };
 
   return (
-    <form
-      onSubmit={submit}
-      className="max-w-md mx-auto bg-white p-6 rounded shadow"
-    >
+    <form onSubmit={submit} className="max-w-md mx-auto bg-white p-6 rounded shadow">
       <h2 className="text-xl mb-4 font-semibold">Login</h2>
       <input
         value={email}

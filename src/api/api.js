@@ -1,25 +1,30 @@
 import axios from "axios";
 
 const API = axios.create({
-  // ✅ Load from env
   baseURL: import.meta.env.VITE_API_URL,
+  timeout: 10000,
 });
 
-// Token interceptor → attach JWT token if available
-API.interceptors.request.use((req) => {
+// ✅ CORRECT Token Interceptor
+API.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
+  console.log("🔑 Getting token:", token);
   if (token) {
-    req.headers.Authorization = `Bearer ${token}`;
+    config.headers.Authorization = `Bearer ${token}`;
+    console.log("✅ Token added to request");
   }
-  return req;
+  return config;
 });
 
-// ✅ Export setAuth (manages token in localStorage)
+// ✅ CORRECT setAuth Function
 export function setAuth(token) {
+  console.log("💾 Saving token:", token);
   if (token) {
     localStorage.setItem("token", token);
+    // ✅ IMPORTANT: API headers automatically update agum
   } else {
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
   }
 }
 

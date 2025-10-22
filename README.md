@@ -1,16 +1,77 @@
-# React + Vite
+ AI Task Agent System
+A sophisticated AI-powered project management system that translates high-level project briefs into concrete technical tasks using specialized AI agents.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ 🚀 Live Demo
+Frontend: https://task-agent-frontend.vercel.app
 
-Currently, two official plugins are available:
+Backend: https://task-agent-backend-ynx3.onrender.com
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📋 Project Overview
+This system implements an AI Coordinator that breaks down project briefs into technical tasks and assigns them to specialized sub-agents:
 
-## React Compiler
+AI Coordinator Agent: Analyzes project briefs and creates task breakdowns
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Frontend Agent: Creates responsive React UI components
 
-## Expanding the ESLint configuration
+Backend Agent: Implements REST APIs and business logic
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✨ Features
+🤖 AI Coordinator
+Natural language project brief analysis
+
+Automatic task breakdown into frontend/backend/database tasks
+
+Intelligent task assignment to specialized agents
+
+🔐 Authentication
+JWT-based user authentication
+
+Secure password hashing with bcrypt
+
+Protected API routes
+
+📝 Task Management
+Create, read, update, and delete tasks
+
+Task status tracking (On Track, In Progress, Completed)
+
+Task sharing between users
+
+📁 File Management
+File upload functionality
+
+Secure file storage
+
+File attachment to tasks
+
+🎨 User Interface
+Responsive React design
+
+Modern Tailwind CSS styling
+
+Real-time task updates
+
+🛠️ Technology Stack
+Frontend
+React - UI framework
+
+React Router - Navigation
+
+Axios - API communication
+
+Tailwind CSS - Styling
+
+Backend
+Node.js - Runtime environment
+
+Express.js - Web framework
+
+MongoDB - Database
+
+Mongoose - ODM
+
+JWT - Authentication
+
+bcrypt - Password hashing
+
+Multer - File uploads
